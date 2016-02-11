@@ -20,7 +20,7 @@ namespace BatesMotel.Controllers
 
         public BookingsController()
         {
-            this.bookingRepo = new BookingRepo();
+            this.bookingRepo = new BookingRepo(db);
         }
 
         public BookingsController(BookingRepo bookingRepo)

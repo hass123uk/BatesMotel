@@ -12,7 +12,7 @@ namespace BatesMotel
         {
             Bookings = new HashSet<Booking>();
         }
-
+        [Display(Name = "Room Number")]
         public int ID { get; set; }
 
         public int Room_no { get; set; }
