@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Bates Motel";
+}
+@section JavaScript{
+    <script type="text/javascript">
+        $(function () {
+            $('.input-daterange').datepicker();
+        });
+    </script>
+}
+
+<div class="jumbotron">
+    <h1>Bates Motel</h1>
+    <p class="lead">Find avaliable rooms using our website.</p>
+    <div class="input-daterange input-group row" id="datepicker">
+            <span class="input-group-addon">Check-In</span>
+            <input type="text" class="input form-control" name="start" />
+            <span class="input-group-addon">Check-Out</span>
+            <input type="text" class="input form-control" name="end" />
+        </div>
+    <hr />
+    <button type="button" class="btn btn-success btn-block" onclick="location.href='@Url.Action("Index","Bookings")'">Search</button>
+</div>
+
+
+
+
