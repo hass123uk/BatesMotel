@@ -9,6 +9,11 @@ namespace BatesMotel.DAL_EF.Repository
     {
         private BatesMotelContext db = null;
 
+        public BookingRepo( )
+        {
+            this.db = new BatesMotelContext();
+        }
+        
         public BookingRepo(BatesMotelContext databaseContext)
         {
             this.db = databaseContext;
