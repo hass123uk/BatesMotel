@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BatesMotel.DAL_EF.Repository;
+using BatesMotel.Models;
+using System.Globalization;
 
 namespace BatesMotel.Controllers
 {
@@ -12,8 +14,9 @@ namespace BatesMotel.Controllers
 
         public ActionResult Index()
         {
+          
             return View();
         }
-
+   
     }
-}
+    }

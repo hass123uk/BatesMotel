@@ -8,7 +8,8 @@ using System.Web;
 using System.Web.Mvc;
 using BatesMotel;
 using BatesMotel.DAL_EF.Repository;
-
+using BatesMotel.Models;
+using System.Globalization;
 
 namespace BatesMotel.Controllers
 {
@@ -20,7 +21,7 @@ namespace BatesMotel.Controllers
 
         public BookingsController()
         {
-            this.bookingRepo = new BookingRepo();
+            this.bookingRepo = new BookingRepo(db);
         }
 
         public BookingsController(BookingRepo bookingRepo)
@@ -30,12 +31,22 @@ namespace BatesMotel.Controllers
 
 
         // GET: Bookings
-        public ActionResult Index()
+        public ActionResult Index(Interval dates)
         {
+            
+            DateTime checkIn = Convertor(dates.CheckIn_Date);
+            DateTime checkOut = Convertor(dates.CheckOut_Date);
+            //--------------------------------------------------
             var bookings = db.Bookings.Include(b => b.Room);
             return View(bookings.ToList());
         }
-
+        //Method for converting Date format, from string to DateTime
+        private DateTime Convertor(string date)
+        {
+            DateTime dt = DateTime.ParseExact(date, "MM/dd/yyyy", 
+                CultureInfo.InvariantCulture);
+            return dt;
+        }
         // GET: Bookings/Details/5
         public ActionResult Details(int? id)
         {
@@ -50,7 +61,7 @@ namespace BatesMotel.Controllers
             }
             return View(booking);
         }
-
+   
         // GET: Bookings/Create
         public ActionResult Create()
         {
