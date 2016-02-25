@@ -171,6 +171,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAL_EF\Repository\BookingRepo.cs" />
     <Compile Include="DAL_EF\Repository\IBookingRepo.cs" />
+    <Compile Include="DAL_EF\Repository\IRoomRepo.cs" />
+    <Compile Include="DAL_EF\Repository\RoomRepo.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

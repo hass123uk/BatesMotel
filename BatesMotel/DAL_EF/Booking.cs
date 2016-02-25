@@ -19,5 +19,7 @@ namespace BatesMotel
         public int RoomID { get; set; }
 
         public virtual Room Room { get; set; }
+
     }
+
 }
